@@ -1,0 +1,17 @@
+def reverse_words(string):
+    # Split the string into words
+    words = string.split()
+
+    # Reverse the order of the words
+    reversed_words = words[::-1]
+
+    # Join the reversed words into a single string
+    reversed_string = ' '.join(reversed_words)
+
+    return reversed_string
+
+
+# Test the function
+s = 'Maheshwar Sir'
+reversed_string = reverse_words(s)
+print(reversed_string)
