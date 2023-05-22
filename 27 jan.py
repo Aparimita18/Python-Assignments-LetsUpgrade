@@ -1,25 +1,27 @@
-#to display table of a number
-def display_table(number, limit):
+def display_table_and_prime(number, limit):
+    # Display table of the given number
+    print(f"Table of {number}:")
     for i in range(1, limit + 1):
-        print(f"{number} x {i} = {number * i}")
+        print(f"{number} * {i} = {number * i}")
 
-# Example usage
-display_table(5, 10)
+    # Find and print prime numbers from the table
+    print(f"\nPrime numbers from the table of {number}:")
+    for i in range(1, limit + 1):
+        result = number * i
+        if is_prime(result):
+            print(result)
 
 
-#to print prime numbers upto a limit
-def is_prime(number):
-    if number <= 1:
+def is_prime(num):
+    if num <= 1:
         return False
-    for i in range(2, int(number ** 0.5) + 1):
-        if number % i == 0:
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
             return False
     return True
 
-def print_prime_numbers(limit):
-    for number in range(2, limit + 1):
-        if is_prime(number):
-            print(number)
 
-# Example usage
-print_prime_numbers(20)
+# Test the function
+number = 7
+limit = 10
+display_table_and_prime(number, limit)
